@@ -1,28 +1,14 @@
-const faqQuestions =
-        document.querySelectorAll(".faq-question");
+document.querySelectorAll(".faq-question").forEach(question => {
+  question.addEventListener("click", () => {
+    const currentItem = question.parentElement;
+    const isActive = currentItem.classList.contains("active");
 
-
-    faqQuestions.forEach(question => {
-
-        question.addEventListener("click", () => {
-
-            const currentItem =
-                question.parentElement;
-
-
-            document
-                .querySelectorAll(".faq-item")
-                .forEach(item => {
-
-                    if (item !== currentItem) {
-                        item.classList.remove("active");
-                    }
-
-                });
-
-
-            currentItem.classList.toggle("active");
-
-        });
-
+    document.querySelectorAll(".faq-item").forEach(item => {
+      item.classList.remove("active");
     });
+
+    if (!isActive) {
+      currentItem.classList.add("active");
+    }
+  });
+});
