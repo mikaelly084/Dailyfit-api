@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyFit | Meu painel</title>
+
+  <style>
+    :root {
+      --verde: #218c59;
+      --fundo: #f4f7f5;
+      --texto: #20352a;
+      --branco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+    }
+
+    header {
+      background: var(--branco);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e3ebe5;
+    }
+
+    header h1 {
+      color: var(--verde);
+      margin: 0;
+      font-size: 24px;
+    }
+
+    header span {
+      font-size: 13px;
+    }
+
+    main {
+      width: min(100% - 32px, 900px);
+      margin: 28px auto;
+    }
+
+    .boas-vindas {
+      margin-bottom: 24px;
+    }
+
+    .boas-vindas h2 {
+      margin-bottom: 8px;
+      font-size: 25px;
+    }
+
+    .boas-vindas p {
+      color: #65736a;
+      line-height: 1.5;
+    }
+
+    .resumo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .card,
+    .refeicoes {
+      background: var(--branco);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 18px #193b2410;
+    }
+
+    .card p {
+      margin: 0 0 12px;
+      color: #68766d;
+      font-size: 14px;
+    }
+
+    .card strong {
+      font-size: 27px;
+      color: var(--verde);
+    }
+
+    .refeicoes h3 {
+      margin-top: 0;
+    }
+
+    .refeicao {
+      padding: 15px 0;
+      border-bottom: 1px solid #e8eee9;
+    }
+
+    .refeicao:last-child {
+      border-bottom: 0;
+    }
+
+    .refeicao span {
+      display: block;
+      color: #758078;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .aviso {
+      background: #e4f4e9;
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #758078;
+      font-size: 13px;
+    }
+
+    @media (max-width: 520px) {
+      .resumo {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 16px;
+      }
+
+      .card strong {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>DailyFit</h1>
+    <span>Meu painel</span>
+  </header>
+
+  <main>
+    <section class="boas-vindas">
+      <h2>Olá! 👋</h2>
+      <p>
+        Acompanhe sua alimentação e continue firme
+        nos seus objetivos.
+      </p>
+    </section>
+
+    <section class="resumo">
+      <article class="card">
+        <p>Refeições cadastradas</p>
+        <strong id="total">0</strong>
+      </article>
+
+      <article class="card">
+        <p>Dentro da dieta</p>
+        <strong id="dentro">0</strong>
+      </article>
+
+      <article class="card">
+        <p>Fora da dieta</p>
+        <strong id="fora">0</strong>
+      </article>
+    </section>
+
+    <section class="refeicoes">
+      <h3>🍽️ Minhas refeições</h3>
+
+      <div id="lista">
+        <p>
+          Suas refeições aparecerão aqui quando
+          forem conectadas à API.
+        </p>
+      </div>
+    </section>
+
+    <div class="aviso">
+      <strong>🌱 Um passo de cada vez!</strong>
+      <br>
+      Registre suas refeições e acompanhe sua
+      evolução diariamente.
+    </div>
+  </main>
+
+  <footer>
+    DailyFit — Sua jornada, sua evolução.
+  </footer>
+</body>
+</html>
